@@ -47,12 +47,17 @@
     width:100%;
     display:grid;
     grid-template-columns: var(--bar) 1fr;
-    grid-template-rows: var(--bar) 1fr;
+    grid-template-rows: env(safe-area-inset-top, 0px) var(--bar) 1fr;
+  }
+  .safe-top-spacer{
+    grid-column: 1 / -1; grid-row: 1;
+    background:linear-gradient(145deg,#4a3521,var(--walnut-dark));
+    border-bottom:2px solid var(--iron);
   }
 
   /* ---------- corner ---------- */
   .corner{
-    grid-column:1; grid-row:1;
+    grid-column:1; grid-row:2;
     background:linear-gradient(145deg,#4a3521,var(--walnut-dark));
     border-right:2px solid var(--iron);
     border-bottom:2px solid var(--iron);
@@ -71,8 +76,8 @@
     transition:opacity .2s, box-shadow .2s;
     overflow:hidden;
   }
-  #vBarWrap{ grid-column:1; grid-row:2; border-right:2px solid var(--iron); border-bottom:none; }
-  #hBarWrap{ grid-column:2; grid-row:1; }
+  #vBarWrap{ grid-column:1; grid-row:3; border-right:2px solid var(--iron); border-bottom:none; }
+  #hBarWrap{ grid-column:2; grid-row:2; }
   .bar-wrap.active{
     opacity:1;
     box-shadow:0 0 14px 1px rgba(217,172,76,0.5), inset 0 0 0 1px rgba(184,137,43,0.4);
@@ -96,7 +101,7 @@
 
   /* ---------- main / piazza ---------- */
   .main{
-    grid-column:2; grid-row:2;
+    grid-column:2; grid-row:3;
     display:flex; flex-direction:column;
     padding:8px 10px 10px;
     min-height:0; min-width:0;
@@ -444,6 +449,7 @@
 <body>
 
   <div class="frame">
+    <div class="safe-top-spacer"></div>
     <div class="corner" id="cornerBtn" title="Menu">
       <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
     </div>

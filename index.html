@@ -330,7 +330,7 @@
     font-family:'Cinzel',serif; color:var(--gold-bright); letter-spacing:0.05em;
     font-size:18px; margin:6px 0 4px;
   }
-  .hidden{display:none;}
+  .hidden{display:none !important;}
   .card{
     background:linear-gradient(180deg,#4a3521,var(--walnut));
     border:3px solid var(--iron);
@@ -952,6 +952,8 @@
   }
   function bandColorsFor(who){
     const name = who==='human' ? p1Name : p2Name;
+    const pair = RIONE_SHIELDS[name];
+    if(pair) return pair[Math.random() < 0.5 ? 0 : 1];
     return RIONE_COLORS[name] || ['#7C9265', '#A6432C'];
   }
 

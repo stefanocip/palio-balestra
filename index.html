@@ -76,8 +76,10 @@
     transition:opacity .2s, box-shadow .2s;
     overflow:hidden;
   }
-  #vBarWrap{ grid-column:1; grid-row:3; border-right:2px solid var(--iron); border-bottom:none; }
-  #hBarWrap{ grid-column:2; grid-row:2; }
+  #vBarWrap{ grid-column:1; grid-row:3; border-right:2px solid var(--iron); border-bottom:none;
+    background:linear-gradient(180deg, #E5383B 0%, #F4C93D 25%, #4CAF50 50%, #F4C93D 75%, #E5383B 100%); }
+  #hBarWrap{ grid-column:2; grid-row:2;
+    background:linear-gradient(90deg, #E5383B 0%, #F4C93D 25%, #4CAF50 50%, #F4C93D 75%, #E5383B 100%); }
   .bar-wrap.active{
     opacity:1;
     box-shadow:0 0 14px 1px rgba(217,172,76,0.5), inset 0 0 0 1px rgba(184,137,43,0.4);
@@ -931,8 +933,8 @@
     els.flash.classList.remove('go'); void els.flash.offsetWidth; els.flash.classList.add('go');
   }
   const RIONE_COLORS = {
-    'Porta Romana': ['#A6432C', '#EDE3C8'],
-    'Porta Fiorentina': ['#A6432C', '#D9AC4C'],
+    'Porta Romana': ['#EDE3C8', '#6b4a30'],
+    'Porta Fiorentina': ['#D9AC4C', '#151312'],
     'Gubbio': ['#4a2f6b', '#151312'],
     'Sansepolcro': ['#4b6b3a', '#EDE3C8'],
   };
